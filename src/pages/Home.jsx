@@ -8,6 +8,8 @@ import Footer from "../components/Footer";
 import WhyChooseUs from "../components/WhyChooseUs";
 import ContactCTA from "../components/ContactCTA";
 import ClientsSlider from "../components/ClientsSlider";
+import BTGExpertise from "../components/BTGExpertise";
+import SafetyQuality from "../components/SafetyQuality";
 
 export default function Home() {
   return (
@@ -31,7 +33,9 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Stats />
+      <BTGExpertise />
       <Services />
+      <SafetyQuality/>
       <WhyChooseUs />
       <Projects />
       <ClientsSlider />
