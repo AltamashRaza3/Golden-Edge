@@ -6,7 +6,7 @@ import Certifications from "../components/Certifications";
 import Awards from "../components/Awards";
 import journeyImage from "../assets/images/journey.jpeg";
 import founder from "../assets/images/founder.jpg";
-import director from "../assets/images/director.jpg";
+import director from "../assets/images/director.jpeg";
 import ExpertTeam from "../components/ExpertTeam";
 import Policies from "../components/Policies";
 import MissionValues from "../components/MissionValues";
@@ -58,7 +58,7 @@ const tabs = [
 { id: "history", label: "History", icon: <History size={18} /> },
 { id: "mission", label: "Mission & Vision", icon: <Target size={18} /> },
 { id: "founder", label: "Founder", icon: <User size={18} /> },
-{ id: "management", label: "Board of Directors", icon: <Users size={18} /> },
+{ id: "management", label: "Board of Director", icon: <Users size={18} /> },
 { id: "executive", label: "Executive Director", icon: <Users size={18} /> },
 { id: "quality", label: "Quality Policy", icon: <ShieldCheck size={18} /> },
 ];
@@ -88,7 +88,7 @@ return (
               key={tab.id}
               onClick={() => {
                 setActiveTab(tab.id);
-                window.location.hash = tab.id;
+                window.location.hash = `/about#${tab.id}`;
               }}
               className={`flex items-center gap-2 px-5 py-2 rounded font-medium transition ${
                 activeTab === tab.id
