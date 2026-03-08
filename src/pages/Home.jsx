@@ -10,6 +10,7 @@ import ContactCTA from "../components/ContactCTA";
 import ClientsSlider from "../components/ClientsSlider";
 import BTGExpertise from "../components/BTGExpertise";
 import SafetyQuality from "../components/SafetyQuality";
+import ClientRequirements from "../components/ClientRequirements";
 
 export default function Home() {
   return (
@@ -34,6 +35,7 @@ export default function Home() {
       <Hero />
       <Stats />
       <BTGExpertise />
+      <ClientRequirements/>
       <Services />
       <SafetyQuality/>
       <WhyChooseUs />

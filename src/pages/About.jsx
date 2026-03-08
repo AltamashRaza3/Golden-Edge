@@ -4,10 +4,10 @@ import Footer from "../components/Footer";
 import CompanyTimeline from "../components/CompanyTimeline";
 import Certifications from "../components/Certifications";
 import Awards from "../components/Awards";
-
+import journeyImage from "../assets/images/journey.jpeg"
 import founder from "../assets/images/founder.jpg";
 import director from "../assets/images/director.jpg";
-
+import ExpertTeam from "../components/ExpertTeam";
 
 import {
   Building2,
@@ -17,6 +17,9 @@ import {
   Users,
   ShieldCheck,
 } from "lucide-react";
+import Policies from "../components/Policies";
+import MissionValues from "../components/MissionValues";
+import CompanyStats from "../components/CompanyStats";
 
 export default function About() {
   const [activeTab, setActiveTab] = useState("profile");
@@ -108,6 +111,8 @@ export default function About() {
               </p>
             )}
 
+            <CompanyStats/>
+
             {/* History */}
 
             {activeTab === "history" && (
@@ -127,44 +132,7 @@ export default function About() {
 
             {/* Mission & Vision */}
 
-            {activeTab === "mission" && (
-              <div className="space-y-10">
-                <div>
-                  <h3 className="text-xl font-semibold mb-3 text-yellow-600">
-                    Our Mission
-                  </h3>
-
-                  <p className="text-gray-700 leading-relaxed">
-                    The personnel of Golden Edge Engineering Pvt. Ltd. are
-                    committed to providing construction and engineering services
-                    in a professional manner that exceeds the expectations of
-                    our clients.
-                  </p>
-
-                  <ul className="list-disc pl-6 mt-4 space-y-2 text-gray-700">
-                    <li>Deliver projects on time and within budget.</li>
-                    <li>
-                      Maintain the highest standards of safety and quality.
-                    </li>
-                    <li>Build long-term relationships through transparency.</li>
-                    <li>Expand engineering capabilities across new markets.</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-semibold mb-3 text-yellow-600">
-                    Our Vision
-                  </h3>
-
-                  <p className="text-gray-700 leading-relaxed">
-                    To become a leading engineering and construction company in
-                    the power generation and infrastructure sector by delivering
-                    reliable, safe and high-quality engineering solutions while
-                    building long-term partnerships with clients.
-                  </p>
-                </div>
-              </div>
-            )}
+            <MissionValues />
 
             {/* Founder */}
 
@@ -283,9 +251,19 @@ export default function About() {
             )}
           </div>
 
+          <div className="mb-12">
+            <img
+              src={journeyImage}
+              alt="Golden Edge Engineering Journey"
+              className="w-full max-w-5xl mx-auto rounded-lg shadow-lg"
+            />
+          </div>
+
           <CompanyTimeline />
           <Awards />
           <Certifications />
+          <ExpertTeam />
+          <Policies />
         </div>
       </section>
 

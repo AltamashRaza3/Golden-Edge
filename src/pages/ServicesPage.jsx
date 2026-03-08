@@ -67,23 +67,24 @@ return (
     {" "}
     <Navbar />
     {/* Hero Section */}
-    <section className="relative pt-24 h-[380px] md:h-[420px] flex items-center justify-center text-white overflow-hidden">
-      {/* Background Image */}
+    <section className="relative pt-24 h-[360px] md:h-[420px] flex items-center justify-center text-white overflow-hidden">
       <img
         src={heroImage}
         alt="Thermal Power Plant"
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{ objectPosition: "center 20%" }}
+        className="
+      absolute inset-0 w-full h-full object-cover
+      object-[center_70%]
+      md:object-[center_60%]
+      lg:object-[center_50%]
+    "
       />
 
-      {/* Overlay */}
       <div className="absolute inset-0 bg-black/65"></div>
 
-      {/* Content */}
       <div className="relative text-center px-6 max-w-3xl">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Services</h1>
 
-        <p className="text-gray-200 text-lg leading-relaxed">
+        <p className="text-gray-200 text-lg">
           Golden Edge Engineering provides specialized construction and
           engineering services for thermal power plants and large-scale
           industrial infrastructure projects.
