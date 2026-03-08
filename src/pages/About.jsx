@@ -3,10 +3,20 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CompanyTimeline from "../components/CompanyTimeline";
 import Certifications from "../components/Certifications";
+import Awards from "../components/Awards";
+
 import founder from "../assets/images/founder.jpg";
 import director from "../assets/images/director.jpg";
-import { Building2,History,Target,User,Users,ShieldCheck,} from "lucide-react";
-import Awards from "../components/Awards";
+
+
+import {
+  Building2,
+  History,
+  Target,
+  User,
+  Users,
+  ShieldCheck,
+} from "lucide-react";
 
 export default function About() {
   const [activeTab, setActiveTab] = useState("profile");
@@ -43,6 +53,11 @@ export default function About() {
                 icon: <Users size={18} />,
               },
               {
+                id: "executive",
+                label: "Executive Director",
+                icon: <Users size={18} />,
+              },
+              {
                 id: "quality",
                 label: "Quality Policy",
                 icon: <ShieldCheck size={18} />,
@@ -63,7 +78,7 @@ export default function About() {
             ))}
           </div>
 
-          {/* Content Card */}
+          {/* Content */}
 
           <div className="bg-white shadow-lg p-10 rounded-lg mb-16">
             {/* Company Profile */}
@@ -76,9 +91,9 @@ export default function About() {
                 plant projects across India. With decades of experience in the
                 engineering and construction industry, the company has developed
                 strong expertise in mechanical erection, infrastructure
-                development, and industrial project execution. Golden Edge
-                Engineering has successfully delivered complex power plant
-                construction works including boiler erection, turbine
+                development, and BTG (Boiler–Turbine–Generator) systems for
+                thermal power plants. Golden Edge Engineering has successfully
+                delivered complex projects including boiler erection, turbine
                 installation, structural fabrication, and balance of plant
                 systems. The organization has built long-term relationships with
                 major public sector utilities and private power companies by
@@ -87,11 +102,9 @@ export default function About() {
                 technicians, and project professionals, the company ensures
                 timely execution of projects while maintaining strict compliance
                 with engineering standards. Golden Edge Engineering continues to
-                expand its presence across India by undertaking challenging
-                infrastructure and power sector projects while maintaining its
+                expand its presence across India while maintaining its
                 commitment to reliability, technical excellence, and client
                 satisfaction.
-              
               </p>
             )}
 
@@ -100,118 +113,55 @@ export default function About() {
             {activeTab === "history" && (
               <p className="text-gray-700 leading-relaxed">
                 The company traces its roots back to Golden Construction
-                established in 1970. Over the years the organization has grown
-                into a trusted engineering partner delivering large-scale
-                infrastructure and power generation projects across India.
+                established in 1970. Over the decades the organization expanded
+                its capabilities in executing large-scale industrial and power
+                generation projects across India. In 2004 the company evolved
+                into Golden Edge Engineering Pvt. Ltd., strengthening its
+                position as a reliable engineering contractor in the power
+                sector. With the introduction of modern management practices and
+                technical expertise, the company has successfully contributed to
+                numerous thermal power plant and infrastructure projects
+                nationwide.
               </p>
             )}
 
             {/* Mission & Vision */}
 
             {activeTab === "mission" && (
-              <div className="space-y-12">
-                {/* Mission */}
-
-                <div className="bg-gray-50 p-6 rounded-lg shadow">
-                  <h3 className="text-xl font-semibold mb-4 text-yellow-600">
+              <div className="space-y-10">
+                <div>
+                  <h3 className="text-xl font-semibold mb-3 text-yellow-600">
                     Our Mission
                   </h3>
 
-                  <p className="text-gray-700 leading-relaxed mb-4">
+                  <p className="text-gray-700 leading-relaxed">
                     The personnel of Golden Edge Engineering Pvt. Ltd. are
                     committed to providing construction and engineering services
                     in a professional manner that exceeds the expectations of
                     our clients.
                   </p>
 
-                  <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                    <li>Deliver quality projects on time and within budget.</li>
+                  <ul className="list-disc pl-6 mt-4 space-y-2 text-gray-700">
+                    <li>Deliver projects on time and within budget.</li>
                     <li>
-                      Maintain the highest standards of safety and workmanship.
+                      Maintain the highest standards of safety and quality.
                     </li>
-                    <li>
-                      Build long-term relationships through clear communication
-                      with clients.
-                    </li>
-                    <li>
-                      Expand engineering capabilities across different
-                      geographies.
-                    </li>
+                    <li>Build long-term relationships through transparency.</li>
+                    <li>Expand engineering capabilities across new markets.</li>
                   </ul>
                 </div>
 
-                {/* Vision */}
-
-                <div className="bg-gray-50 p-6 rounded-lg shadow">
-                  <h3 className="text-xl font-semibold mb-4 text-yellow-600">
+                <div>
+                  <h3 className="text-xl font-semibold mb-3 text-yellow-600">
                     Our Vision
                   </h3>
 
                   <p className="text-gray-700 leading-relaxed">
                     To become a leading engineering and construction company in
-                    the power generation and infrastructure sector by
-                    consistently delivering reliable, safe and high-quality
-                    engineering solutions while maintaining long-term
-                    partnerships with clients.
+                    the power generation and infrastructure sector by delivering
+                    reliable, safe and high-quality engineering solutions while
+                    building long-term partnerships with clients.
                   </p>
-                </div>
-
-                {/* Core Values */}
-
-                <div className="bg-gray-50 p-6 rounded-lg shadow">
-                  <h3 className="text-xl font-semibold mb-6 text-yellow-600">
-                    Core Values
-                  </h3>
-
-                  <div className="grid md:grid-cols-2 gap-6 text-gray-700">
-                    <div>
-                      <strong>Excellence</strong>
-                      <p className="text-sm mt-1">
-                        Striving for excellence in planning, execution and
-                        project management to maximize client satisfaction.
-                      </p>
-                    </div>
-
-                    <div>
-                      <strong>Teamwork</strong>
-                      <p className="text-sm mt-1">
-                        Working together with trust and collaboration to achieve
-                        shared goals.
-                      </p>
-                    </div>
-
-                    <div>
-                      <strong>Innovation</strong>
-                      <p className="text-sm mt-1">
-                        Delivering customized engineering solutions for complex
-                        industrial challenges.
-                      </p>
-                    </div>
-
-                    <div>
-                      <strong>Accountability</strong>
-                      <p className="text-sm mt-1">
-                        Taking responsibility for commitments, actions and
-                        project outcomes.
-                      </p>
-                    </div>
-
-                    <div>
-                      <strong>Employee Recognition</strong>
-                      <p className="text-sm mt-1">
-                        Valuing and empowering employees who contribute to
-                        company growth and success.
-                      </p>
-                    </div>
-
-                    <div>
-                      <strong>Continuous Learning</strong>
-                      <p className="text-sm mt-1">
-                        Continuously improving skills, processes and engineering
-                        standards.
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </div>
             )}
@@ -228,7 +178,6 @@ export default function About() {
 
                 <div>
                   <h2 className="text-2xl font-semibold">Mr. Nizam-Ul-Haque</h2>
-
                   <p className="text-yellow-600 mb-4">Founder</p>
 
                   <p className="text-gray-700 leading-relaxed">
@@ -238,25 +187,25 @@ export default function About() {
                     to industrial and power sector clients.
                   </p>
 
-                  <p className="text-gray-700 leading-relaxed mt-4">
+                  <p className="text-gray-700 mt-4 leading-relaxed">
                     At GEEPL, client satisfaction remains the foundation of the
                     company’s philosophy. The organization is committed to
-                    delivering projects with professionalism, efficiency, and
-                    quality workmanship that consistently exceeds client
-                    expectations.
+                    delivering projects with professionalism, efficiency and
+                    quality workmanship that consistently exceeds expectations.
                   </p>
 
-                  <p className="text-gray-700 leading-relaxed mt-4">
-                    Under his leadership, the company built a strong team of
+                  <p className="text-gray-700 mt-4 leading-relaxed">
+                    Under his leadership the company built a strong team of
                     engineers and professionals dedicated to delivering
                     high-quality engineering solutions and maintaining long-term
-                    relationships with clients.
+                    client relationships. At GEEPL, the success of our clients
+                    remains our greatest achievement.
                   </p>
                 </div>
               </div>
             )}
 
-            {/* Board of Directors */}
+            {/* Director */}
 
             {activeTab === "management" && (
               <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -268,22 +217,53 @@ export default function About() {
 
                 <div>
                   <h2 className="text-2xl font-semibold">Mr. Sk. Amaan</h2>
-
                   <p className="text-yellow-600 mb-4">Director</p>
 
                   <p className="text-gray-700 leading-relaxed">
-                    GEEPL is one of the emerging companies in the field of
-                    mechanical construction where the ultimate aim is to work
-                    towards client satisfaction. Facing upcoming challenges and
-                    opportunities, the company is determined to expand its
-                    business across different geographical regions.
+                    GEEPL continues to grow as an emerging company in the field
+                    of mechanical construction with the primary objective of
+                    achieving client satisfaction through reliable engineering
+                    solutions.
                   </p>
 
                   <p className="text-gray-700 mt-4 leading-relaxed">
-                    Golden Edge Engineering embraces modern construction
-                    technologies to help clients build and grow their businesses
-                    while maintaining the highest standards of engineering and
-                    project execution.
+                    By adopting modern construction technologies and building a
+                    strong team of skilled engineers and technicians, the
+                    company focuses on completing complex projects within the
+                    shortest possible time while maintaining high standards of
+                    quality and safety.
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {/* Executive Director */}
+
+            {activeTab === "executive" && (
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                <img
+                  src={founder}
+                  alt="Md Azizullah"
+                  className="w-full max-w-md mx-auto rounded-lg shadow-lg"
+                />
+
+                <div>
+                  <h2 className="text-2xl font-semibold">Md. Azizullah</h2>
+                  <p className="text-yellow-600 mb-4">Executive Director</p>
+
+                  <p className="text-gray-700 leading-relaxed">
+                    As Executive Director, Md. Azizullah plays a vital role in
+                    transforming the company’s strategic vision into operational
+                    success. His leadership focuses on strengthening project
+                    execution, developing skilled teams and enhancing
+                    engineering capabilities.
+                  </p>
+
+                  <p className="text-gray-700 mt-4 leading-relaxed">
+                    With a strong emphasis on innovation, efficiency and
+                    continuous learning, he drives the organization toward
+                    expanding its capabilities while exploring new opportunities
+                    in national and international markets.
                   </p>
                 </div>
               </div>
@@ -293,14 +273,15 @@ export default function About() {
 
             {activeTab === "quality" && (
               <p className="text-gray-700 leading-relaxed">
-                Golden Edge Engineering is committed to maintaining
-                international quality standards through continuous improvement,
-                safety practices, and client satisfaction.
+                Golden Edge Engineering Pvt. Ltd. is committed to maintaining
+                international standards of quality through continuous
+                improvement, strict safety practices and adherence to
+                engineering best practices. The company strives to deliver
+                reliable construction services that meet client requirements
+                while ensuring safety, quality and timely execution of projects.
               </p>
             )}
           </div>
-
-          {/* Timeline */}
 
           <CompanyTimeline />
           <Awards />

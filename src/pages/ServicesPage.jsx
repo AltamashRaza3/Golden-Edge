@@ -1,83 +1,127 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { Flame, Wind, Zap, Wrench, Factory, Settings } from "lucide-react";
+
+import heroImage from "../assets/images/hero-power-plant.jpeg";
 
 export default function ServicesPage() {
-  const services = [
-    {
-      title: "Boiler Erection",
-      items: [
-        "Boiler structure erection",
-        "Pressure parts installation",
-        "Boiler auxiliaries installation",
-      ],
-    },
-    {
-      title: "Turbine Erection",
-      items: [
-        "Steam turbine installation",
-        "Turbine auxiliaries erection",
-        "Alignment and commissioning support",
-      ],
-    },
-    {
-      title: "Generator Installation",
-      items: [
-        "Generator erection",
-        "Generator auxiliaries installation",
-        "Electrical synchronization support",
-      ],
-    },
-    {
-      title: "Structural Fabrication",
-      items: [
-        "Heavy steel structural fabrication",
-        "Industrial structural erection",
-        "Power plant structural works",
-      ],
-    },
-    {
-      title: "Mechanical Equipment",
-      items: [
-        "Heavy mechanical equipment installation",
-        "Plant machinery erection",
-        "Industrial equipment maintenance",
-      ],
-    },
-    {
-      title: "Piping Systems",
-      items: [
-        "Industrial piping installation",
-        "High-pressure piping systems",
-        "Auxiliary piping works",
-      ],
-    },
-  ];
+const services = [
+{
+title: "Boiler Erection",
+icon: Flame,
+items: [
+"Boiler structure erection",
+"Pressure parts installation",
+"Boiler auxiliaries installation",
+],
+},
+{
+title: "Turbine Erection",
+icon: Wind,
+items: [
+"Steam turbine installation",
+"Turbine auxiliaries erection",
+"Alignment and commissioning support",
+],
+},
+{
+title: "Generator Installation",
+icon: Zap,
+items: [
+"Generator erection",
+"Generator auxiliaries installation",
+"Electrical synchronization support",
+],
+},
+{
+title: "Structural Fabrication",
+icon: Factory,
+items: [
+"Heavy steel structural fabrication",
+"Industrial structural erection",
+"Power plant structural works",
+],
+},
+{
+title: "Mechanical Equipment",
+icon: Wrench,
+items: [
+"Heavy mechanical equipment installation",
+"Plant machinery erection",
+"Industrial equipment maintenance",
+],
+},
+{
+title: "Piping Systems",
+icon: Settings,
+items: [
+"Industrial piping installation",
+"High-pressure piping systems",
+"Auxiliary piping works",
+],
+},
+];
 
-  return (
-    <>
-      <Navbar />
+return (
+  <>
+    {" "}
+    <Navbar />
+    {/* Hero Section */}
+    <section className="relative pt-24 h-[380px] md:h-[420px] flex items-center justify-center text-white overflow-hidden">
+      {/* Background Image */}
+      <img
+        src={heroImage}
+        alt="Thermal Power Plant"
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ objectPosition: "center 20%" }}
+      />
 
-      <section className="pt-24 pb-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <h1 className="text-4xl font-bold text-center mb-12">Our Services</h1>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/65"></div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div key={index} className="bg-white shadow rounded-lg p-6">
-                <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
+      {/* Content */}
+      <div className="relative text-center px-6 max-w-3xl">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Services</h1>
+
+        <p className="text-gray-200 text-lg leading-relaxed">
+          Golden Edge Engineering provides specialized construction and
+          engineering services for thermal power plants and large-scale
+          industrial infrastructure projects.
+        </p>
+      </div>
+    </section>
+    {/* Services Grid */}
+    <section className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => {
+            const Icon = service.icon;
+
+            return (
+              <div
+                key={index}
+                className="bg-white shadow-lg rounded-lg p-6 transition hover:shadow-xl hover:-translate-y-1"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <Icon className="text-yellow-500" size={28} />
+                  <h3 className="text-xl font-semibold">{service.title}</h3>
+                </div>
 
                 <ul className="space-y-2 text-gray-600 text-sm">
                   {service.items.map((item, i) => (
-                    <li key={i}>• {item}</li>
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="text-yellow-500">•</span>
+                      <span>{item}</span>
+                    </li>
                   ))}
                 </ul>
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
-      </section>
-
-      <Footer />
-    </>
-  );
+      </div>
+    </section>
+    <Footer />
+  </>
+);
 }
