@@ -9,6 +9,7 @@ import Contact from "./pages/Contact";
 import ClientsPage from "./pages/ClientsPage";
 import OngoingProjects from "./pages/OngoingProjects";
 import ScrollToTop from "./components/ScrollToTop";
+import AwardsPage from "./pages/AwardsPage";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/infrastructure" element={<Infrastructure />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/awards" element={<AwardsPage />} />
       </Routes>
     </HashRouter>
   );

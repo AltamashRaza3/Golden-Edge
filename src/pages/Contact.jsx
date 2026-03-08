@@ -3,123 +3,110 @@ import Footer from "../components/Footer";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function Contact() {
-  return (
-    <>
-      <Navbar />
 
-      <section className="pt-24 pb-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <h1 className="text-4xl font-bold text-center mb-12">Contact Us</h1>
+const offices = [
+  {
+    title: "Corporate Office",
+    address: "B-4, Sector-6, Noida, U.P",
+    map: "https://maps.google.com/?q=B-4+Sector-6+Noida+Uttar+Pradesh",
+    phone: "0120-4213009-10",
+    tel: "+911204213009",
+    email: "info@goldenedge.in",
+  },
+  {
+    title: "Branch Office",
+    address: "Neya Quila, Nawalpur, Siwan, Bihar – 841226",
+    map: "https://maps.google.com/?q=Neya+Quila+Nawalpur+Siwan+Bihar+841226",
+    phone: "06154-223022",
+    tel: "06154223022",
+    email: "info@goldenedge.in",
+  },
+  {
+    title: "Registered Office",
+    address:
+      "A-229/1, Street No-7, Abul Fazal Enclave-II, Jamia Nagar, Okhla, New Delhi – 110025",
+    map: "https://maps.google.com/?q=A-229/1+Street+No+7+Abul+Fazal+Enclave+II+Jamia+Nagar+New+Delhi+110025",
+    phone: "91-11-26976606",
+    tel: "+911126976606",
+    email: "info@goldenedge.in",
+  },
+];
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Corporate Office */}
+return (
+<> <Navbar />
 
-            <div className="bg-white shadow-lg p-6 rounded-lg">
-              <h2 className="text-xl font-semibold mb-4">Corporate Office</h2>
+  <section className="pt-24 pb-20 bg-gray-50">
+    <div className="max-w-6xl mx-auto px-6">
 
-              <div className="flex gap-3 mb-3">
-                <MapPin className="text-yellow-600" size={20} />
-                <a
-                  href="https://maps.google.com/?q=B-4+Sector-6+Noida+Uttar+Pradesh"
-                  target="_blank"
-                  className="text-gray-700 hover:text-yellow-600"
-                >
-                  B-4, Sector-6, Noida, U.P
-                </a>
-              </div>
+      <h1 className="text-4xl font-bold text-center mb-12">
+        Contact Us
+      </h1>
 
-              <div className="flex gap-3 mb-3">
-                <Phone className="text-yellow-600" size={20} />
-                <a
-                  href="tel:01204213009"
-                  className="text-gray-700 hover:text-yellow-600"
-                >
-                  0120-4213009-10
-                </a>
-              </div>
+      <div className="grid md:grid-cols-3 gap-8">
 
-              <div className="flex gap-3">
-                <Mail className="text-yellow-600" size={20} />
-                <a
-                  href="mailto:info@goldenedge.in"
-                  className="text-gray-700 hover:text-yellow-600"
-                >
-                  info@goldenedge.in
-                </a>
-              </div>
+        {offices.map((office, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-lg p-6 rounded-lg hover:shadow-xl transition"
+          >
+            <h2 className="text-xl font-semibold mb-4">
+              {office.title}
+            </h2>
+
+            {/* Address */}
+
+            <div className="flex items-start gap-3 mb-3">
+              <MapPin className="text-yellow-600 mt-1" size={20} />
+
+              <a
+                href={office.map}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Open ${office.title} location on Google Maps`}
+                className="text-gray-700 hover:text-yellow-600 cursor-pointer break-words transition"
+              >
+                {office.address}
+              </a>
             </div>
 
-            {/* Branch Office */}
+            {/* Phone */}
 
-            <div className="bg-white shadow-lg p-6 rounded-lg">
-              <h2 className="text-xl font-semibold mb-4">Branch Office</h2>
+            <div className="flex items-start gap-3 mb-3">
+              <Phone className="text-yellow-600 mt-1" size={20} />
 
-              <div className="flex gap-3 mb-3">
-                <MapPin className="text-yellow-600" size={20} />
-                <p className="text-gray-700">
-                  Neya Quila, Nawalpur, Siwan, Bihar – 841226
-                </p>
-              </div>
-
-              <div className="flex gap-3 mb-3">
-                <Phone className="text-yellow-600" size={20} />
-                <a
-                  href="tel:06154223022"
-                  className="text-gray-700 hover:text-yellow-600"
-                >
-                  06154-223022
-                </a>
-              </div>
-
-              <div className="flex gap-3">
-                <Mail className="text-yellow-600" size={20} />
-                <a
-                  href="mailto:info@goldenedge.in"
-                  className="text-gray-700 hover:text-yellow-600"
-                >
-                  info@goldenedge.in
-                </a>
-              </div>
+              <a
+                href={`tel:${office.tel}`}
+                aria-label={`Call ${office.phone}`}
+                className="text-gray-700 hover:text-yellow-600 cursor-pointer transition"
+              >
+                {office.phone}
+              </a>
             </div>
 
-            {/* Registered Office */}
+            {/* Email */}
 
-            <div className="bg-white shadow-lg p-6 rounded-lg">
-              <h2 className="text-xl font-semibold mb-4">Registered Office</h2>
+            <div className="flex items-start gap-3">
+              <Mail className="text-yellow-600 mt-1" size={20} />
 
-              <div className="flex gap-3 mb-3">
-                <MapPin className="text-yellow-600" size={20} />
-                <p className="text-gray-700">
-                  A-229/1, Street No-7, Abul Fazal Enclave-II, Jamia Nagar,
-                  Okhla, New Delhi – 110025
-                </p>
-              </div>
-
-              <div className="flex gap-3 mb-3">
-                <Phone className="text-yellow-600" size={20} />
-                <a
-                  href="tel:+911126976606"
-                  className="text-gray-700 hover:text-yellow-600"
-                >
-                  91-11-26976606
-                </a>
-              </div>
-
-              <div className="flex gap-3">
-                <Mail className="text-yellow-600" size={20} />
-                <a
-                  href="mailto:info@goldenedge.in"
-                  className="text-gray-700 hover:text-yellow-600"
-                >
-                  info@goldenedge.in
-                </a>
-              </div>
+              <a
+                href={`mailto:${office.email}?subject=Inquiry from Golden Edge Website`}
+                aria-label={`Email ${office.email}`}
+                className="text-gray-700 hover:text-yellow-600 cursor-pointer transition"
+              >
+                {office.email}
+              </a>
             </div>
+
           </div>
-        </div>
-      </section>
+        ))}
 
-      <Footer />
-    </>
-  );
+      </div>
+
+    </div>
+  </section>
+
+  <Footer />
+</>
+
+);
 }

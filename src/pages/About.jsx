@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CompanyTimeline from "../components/CompanyTimeline";
@@ -23,6 +23,35 @@ ShieldCheck,
 
 export default function About() {
 const [activeTab, setActiveTab] = useState("profile");
+
+useEffect(() => {
+  const setTabFromHash = () => {
+    const fullHash = window.location.hash;
+    const tab = fullHash.split("#")[2];
+
+    const validTabs = [
+      "profile",
+      "history",
+      "mission",
+      "founder",
+      "management",
+      "executive",
+      "quality",
+    ];
+
+    if (validTabs.includes(tab)) {
+      setActiveTab(tab);
+    } else {
+      setActiveTab("profile");
+    }
+  };
+
+  setTabFromHash();
+
+  window.addEventListener("hashchange", setTabFromHash);
+
+  return () => window.removeEventListener("hashchange", setTabFromHash);
+}, []);
 
 const tabs = [
 { id: "profile", label: "Company Profile", icon: <Building2 size={18} /> },
@@ -57,7 +86,10 @@ return (
           {tabs.map((tab) => (
             <button
               key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
+              onClick={() => {
+                setActiveTab(tab.id);
+                window.location.hash = tab.id;
+              }}
               className={`flex items-center gap-2 px-5 py-2 rounded font-medium transition ${
                 activeTab === tab.id
                   ? "bg-yellow-500 text-black"

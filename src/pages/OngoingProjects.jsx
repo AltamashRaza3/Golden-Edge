@@ -1,29 +1,61 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { ongoingProjects } from "../data/projectsdata";
 
 export default function OngoingProjects() {
-  return (
-    <>
-      <Navbar />
+return (
+<> <Navbar />
 
-      <section className="pt-24 pb-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <h1 className="text-4xl font-bold mb-8">Ongoing Projects</h1>
+  <section className="pt-24 pb-20 bg-gray-50">
+    <div className="max-w-7xl mx-auto px-6">
 
-          <p className="text-gray-700 leading-relaxed mb-6">
-            Golden Edge Engineering continues to execute several large-scale
-            power plant and infrastructure projects across India.
-          </p>
+      <h1 className="text-4xl font-bold mb-8">
+        Ongoing Projects
+      </h1>
 
-          <ul className="space-y-4 text-gray-700">
-            <li>Thermal Power Plant Expansion Project</li>
-            <li>Boiler Installation Project</li>
-            <li>Industrial Power Infrastructure Development</li>
-          </ul>
-        </div>
-      </section>
+      <p className="text-gray-700 leading-relaxed mb-10 max-w-3xl">
+        Golden Edge Engineering Pvt. Ltd. is currently executing several
+        major thermal power and infrastructure projects across India,
+        delivering high-quality engineering solutions for leading
+        organizations in the power sector.
+      </p>
 
-      <Footer />
-    </>
-  );
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        {ongoingProjects.map((project, index) => (
+          <div key={index} className="bg-white shadow rounded-lg p-6">
+
+            <h3 className="text-lg font-semibold mb-2">
+              {project.project}
+            </h3>
+
+            <p className="text-sm text-gray-600">
+              <strong>Client:</strong> {project.client}
+            </p>
+
+            <p className="text-sm text-gray-600">
+              <strong>Location:</strong> {project.location}
+            </p>
+
+            <p className="text-sm text-gray-600">
+              <strong>Capacity:</strong> {project.capacity}
+            </p>
+
+            <p className="text-sm text-gray-600 mt-2">
+              {project.scope}
+            </p>
+
+          </div>
+        ))}
+
+      </div>
+
+    </div>
+  </section>
+
+  <Footer />
+</>
+
+
+);
 }

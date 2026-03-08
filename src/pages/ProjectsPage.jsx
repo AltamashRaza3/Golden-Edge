@@ -2,108 +2,127 @@ import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-import plant1 from "../assets/images/thermal-power-plant.jpeg";
-import plant2 from "../assets/images/industrial-power-station.jpeg";
-import plant3 from "../assets/images/power-plant-night.jpeg";
+import { ongoingProjects, completedProjects } from "../data/projectsdata";
 
 export default function ProjectsPage() {
-  const [activeTab, setActiveTab] = useState("completed");
 
-  const completedProjects = [
-    {
-      title: "Thermal Power Plant Installation",
-      client: "NTPC",
-      location: "Jharkhand, India",
-      image: plant1,
-    },
-    {
-      title: "Industrial Power Station Project",
-      client: "JSW Energy",
-      location: "Odisha, India",
-      image: plant2,
-    },
-  ];
+const [activeTab, setActiveTab] = useState("completed");
 
-  const ongoingProjects = [
-    {
-      title: "Power Infrastructure Development",
-      client: "Reliance Power",
-      location: "Gujarat, India",
-      image: plant3,
-    },
-  ];
+const projects =
+activeTab === "completed" ? completedProjects : ongoingProjects;
 
-  return (
-    <>
-      <Navbar />
+return (
+<> <Navbar />
 
-      <section className="pt-24 pb-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <h1 className="text-4xl font-bold text-center mb-12">Our Projects</h1>
+  <section className="pt-24 pb-20 bg-gray-50">
 
-          {/* Tabs */}
+    <div className="max-w-7xl mx-auto px-6">
 
-          <div className="flex justify-center gap-4 mb-12 flex-wrap">
-            <button
-              onClick={() => setActiveTab("completed")}
-              className={`px-5 py-2 rounded ${
-                activeTab === "completed"
-                  ? "bg-yellow-500 text-black"
-                  : "bg-gray-200"
-              }`}
-            >
-              Completed Projects
-            </button>
+      <h1 className="text-4xl font-bold text-center mb-12">
+        Our Projects
+      </h1>
 
-            <button
-              onClick={() => setActiveTab("ongoing")}
-              className={`px-5 py-2 rounded ${
-                activeTab === "ongoing"
-                  ? "bg-yellow-500 text-black"
-                  : "bg-gray-200"
-              }`}
-            >
-              Ongoing Projects
-            </button>
-          </div>
+      {/* Tabs */}
 
-          {/* Projects Grid */}
+      <div className="flex justify-center gap-4 mb-12 flex-wrap">
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {(activeTab === "completed"
-              ? completedProjects
-              : ongoingProjects
-            ).map((project, index) => (
-              <div
+        <button
+          onClick={() => setActiveTab("completed")}
+          className={`px-5 py-2 rounded ${
+            activeTab === "completed"
+              ? "bg-yellow-500 text-black"
+              : "bg-gray-200"
+          }`}
+        >
+          Completed Projects
+        </button>
+
+        <button
+          onClick={() => setActiveTab("ongoing")}
+          className={`px-5 py-2 rounded ${
+            activeTab === "ongoing"
+              ? "bg-yellow-500 text-black"
+              : "bg-gray-200"
+          }`}
+        >
+          Ongoing Projects
+        </button>
+
+      </div>
+
+      {/* Projects Table */}
+
+      <div className="overflow-x-auto bg-white shadow rounded-lg">
+
+        <table className="min-w-full text-left">
+
+          <thead className="bg-gray-100 text-gray-700">
+
+            <tr>
+              <th className="px-6 py-4">Project</th>
+              <th className="px-6 py-4">Client</th>
+              <th className="px-6 py-4">Location</th>
+              <th className="px-6 py-4">Capacity</th>
+              <th className="px-6 py-4">
+                {activeTab === "completed" ? "Year" : "Status"}
+              </th>
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            {projects.map((project, index) => (
+
+              <tr
                 key={index}
-                className="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden"
+                className="border-t hover:bg-gray-50"
               >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="h-56 w-full object-cover"
-                />
 
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">
-                    {project.title}
-                  </h3>
+                <td className="px-6 py-4 font-medium">
+                  {project.project}
+                  {project.highlight && (
+                    <p className="text-sm text-yellow-600">
+                      {project.highlight}
+                    </p>
+                  )}
+                </td>
 
-                  <p className="text-gray-600 text-sm">
-                    <strong>Client:</strong> {project.client}
-                  </p>
+                <td className="px-6 py-4">
+                  {project.client}
+                </td>
 
-                  <p className="text-gray-600 text-sm">
-                    <strong>Location:</strong> {project.location}
-                  </p>
-                </div>
-              </div>
+                <td className="px-6 py-4">
+                  {project.location}
+                </td>
+
+                <td className="px-6 py-4">
+                  {project.capacity}
+                </td>
+
+                <td className="px-6 py-4">
+                  {activeTab === "completed"
+                    ? project.year
+                    : project.status}
+                </td>
+
+              </tr>
+
             ))}
-          </div>
-        </div>
-      </section>
 
-      <Footer />
-    </>
-  );
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <Footer />
+</>
+
+
+);
 }
