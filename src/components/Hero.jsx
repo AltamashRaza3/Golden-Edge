@@ -19,14 +19,14 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/60"></div>
 
       {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-6 text-white">
+      <div className="relative w-full px-10 lg:px-20 text-white">
         {/* Heading */}
         <h1 className="text-4xl md:text-5xl font-bold leading-tight max-w-3xl">
           50+ Years of Excellence in Thermal Power Plant Engineering
         </h1>
 
         {/* Description */}
-        <p className="mt-6 text-lg max-w-2xl">
+        <p className="mt-6 text-lg max-w-3xl">
           At Golden Edge Engineering Pvt. Ltd. (GEEPL), we specialize in
           complete Erection, Testing, and Assistance to Commissioning of
           Boiler–Turbine–Generator (BTG) systems and all their auxiliaries for
@@ -74,7 +74,7 @@ export default function Hero() {
 
           <Link
             to="/contact"
-            className="border px-6 py-3 rounded hover:bg-white hover:text-black transition"
+            className="border bg-white/10 px-6 py-3 rounded font-medium backdrop-blur-sm hover:bg-white hover:text-black hover:-translate-y-0.5 transition duration-300"
           >
             Contact Our Team
           </Link>

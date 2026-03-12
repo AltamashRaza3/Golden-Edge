@@ -6,7 +6,7 @@ export default function ClientRequirements() {
           {/* Text Content */}
 
           <div>
-            <h2 className="text-3xl font-bold mb-6">
+            <h2 className="text-3xl text-center font-bold mb-6">
               Meeting Client Requirements
             </h2>
 
