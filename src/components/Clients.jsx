@@ -68,7 +68,7 @@ export default function Clients() {
                 src={client.logo}
                 alt={client.name}
                 loading="lazy"
-                className="h-16 object-contain grayscale hover:grayscale-0 transition duration-300"
+                className="h-16 object-contain md:grayscale md:opacity-70 md:hover:opacity-100 md:hover:grayscale-0 transition duration-300 hover:scale-105"
               />
             </div>
           ))}
@@ -92,7 +92,7 @@ export default function Clients() {
                 src={client.logo}
                 alt={client.name}
                 loading="lazy"
-                className="h-16 object-contain grayscale hover:grayscale-0 transition duration-300"
+                className="h-16 object-contain md:grayscale md:opacity-70 md:hover:opacity-100 md:hover:grayscale-0 transition duration-300 hover:scale-105"
               />
             </div>
           ))}

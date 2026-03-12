@@ -11,6 +11,7 @@ import ClientsSlider from "../components/ClientsSlider";
 import BTGExpertise from "../components/BTGExpertise";
 import SafetyQuality from "../components/SafetyQuality";
 import ClientRequirements from "../components/ClientRequirements";
+import SupportingExpertise from "../components/SupportingExpertise";
 
 export default function Home() {
   return (
@@ -35,6 +36,7 @@ export default function Home() {
       <Hero />
       <Stats />
       <BTGExpertise />
+      <SupportingExpertise/>
       <ClientRequirements/>
       <Services />
       <SafetyQuality/>

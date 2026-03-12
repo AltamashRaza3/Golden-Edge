@@ -1,4 +1,5 @@
 import heroImage from "../assets/images/hero-power-plant.jpeg";
+import CountUp from "react-countup";
 import { Link } from "react-router-dom";
 
 export default function Hero() {
@@ -19,19 +20,51 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-6 text-white">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-          50+ Years of Excellence in
-          <br />
-          Thermal Power Plant Engineering
+        {/* Heading */}
+        <h1 className="text-4xl md:text-5xl font-bold leading-tight max-w-3xl">
+          50+ Years of Excellence in Thermal Power Plant Engineering
         </h1>
 
-        <p className="text-lg md:text-xl mb-8 max-w-xl">
+        {/* Description */}
+        <p className="mt-6 text-lg max-w-2xl">
+          At Golden Edge Engineering Pvt. Ltd. (GEEPL), we specialize in
+          complete Erection, Testing, and Assistance to Commissioning of
+          Boiler–Turbine–Generator (BTG) systems and all their auxiliaries for
+          Thermal Power Plants.
+        </p>
+
+        <p className="text-lg md:text-xl mt-4 mb-8 max-w-xl">
           Delivering reliable Boiler–Turbine–Generator (BTG) engineering
           solutions for power plants across India.
         </p>
 
+        {/* Company Highlights */}
+        <div className="flex flex-wrap gap-10 mb-10">
+          <div>
+            <p className="text-3xl font-bold text-yellow-400">
+              <CountUp end={50} duration={2.5} />+
+            </p>
+            <p className="text-sm text-gray-300">Years Experience</p>
+          </div>
+
+          <div>
+            <p className="text-3xl font-bold text-yellow-400">
+              <CountUp end={2500} duration={2.5} separator="," />+
+            </p>
+            <p className="text-sm text-gray-300">Skilled Workforce</p>
+          </div>
+
+          <div>
+            <p className="text-3xl font-bold text-yellow-400">
+              <CountUp start={0} end={18} duration={2} />–
+              <CountUp start={0} end={800} duration={2.5} delay={0.3} />
+            </p>
+            <p className="text-sm text-gray-300">BTG Capacity Range</p>
+          </div>
+        </div>
+
+        {/* CTA Buttons */}
         <div className="flex gap-4">
-          {/* Explore Projects */}
           <Link
             to="/projects"
             className="bg-yellow-500 px-6 py-3 rounded font-semibold text-black hover:bg-yellow-400 transition"
@@ -39,12 +72,11 @@ export default function Hero() {
             Explore Projects
           </Link>
 
-          {/* Contact Us */}
           <Link
             to="/contact"
             className="border px-6 py-3 rounded hover:bg-white hover:text-black transition"
           >
-            Contact Us
+            Contact Our Team
           </Link>
         </div>
       </div>

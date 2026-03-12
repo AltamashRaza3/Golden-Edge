@@ -28,8 +28,18 @@ export default function BTGExpertise() {
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-center mb-10">
-          Core Expertise in BTG Systems
+          Our Core Expertise: BTG Systems
         </h2>
+
+        <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
+          With over 50 years of experience, Golden Edge Engineering Pvt. Ltd.
+          (GEEPL) specializes in the Erection, Testing, and Assistance to
+          Commissioning of Boiler–Turbine–Generator (BTG) systems and all their
+          auxiliaries for Thermal Power Plants. Our expertise covers
+          sub-critical to super-critical boiler systems with plant capacities
+          ranging from 18 MW to 800 MW, ensuring reliable, efficient, and fully
+          integrated power generation solutions for our clients.
+        </p>
 
         <div className="grid md:grid-cols-4 gap-8">
           {expertise.map((item, i) => (
