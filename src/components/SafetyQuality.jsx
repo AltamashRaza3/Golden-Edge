@@ -30,9 +30,9 @@ export default function SafetyQuality() {
           {items.map((item, i) => (
             <div
               key={i}
-              className="p-6 border rounded-xl hover:shadow-lg transition"
+              className="bg-white shadow-lg p-6 rounded-xl text-center hover:shadow-xl transition duration-300"
             >
-              <item.icon className="text-blue-600 mb-4" size={40} />
+              <item.icon className="mx-auto text-blue-600 mb-4" size={40} />
               <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
               <p className="text-gray-600 text-sm">{item.desc}</p>
             </div>
