@@ -67,15 +67,16 @@ return (
     {" "}
     <Navbar />
     {/* Hero Section */}
-    <section className="relative pt-24 h-[360px] md:h-[420px] flex items-center justify-center text-white overflow-hidden">
+    <section className="relative pt-24 h-99 md:h-105 flex items-center justify-center text-white overflow-hidden">
       <img
         src={heroImage}
         alt="Thermal Power Plant"
         className="
       absolute inset-0 w-full h-full object-cover
-      object-[center_70%]
-      md:object-[center_60%]
-      lg:object-[center_50%]
+      object-[center_0%]
+      md:object-[center_20%]
+      lg:object-[center_20%]
+      scale-y-99
     "
       />
 
@@ -103,16 +104,16 @@ return (
                 key={index}
                 className="bg-white shadow-lg rounded-lg p-6 transition hover:shadow-xl hover:-translate-y-1"
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <Icon className="text-yellow-500" size={28} />
+                <div className="text-center mb-4">
+                  <Icon className="text-yellow-500 mx-auto mb-2" size={32} />
                   <h3 className="text-xl font-semibold">{service.title}</h3>
                 </div>
 
-                <ul className="space-y-2 text-gray-600 text-sm">
+                <ul className="space-y-3 text-gray-600 text-sm text-center">
                   {service.items.map((item, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <span className="text-yellow-500">•</span>
-                      <span>{item}</span>
+                    <li key={i}>
+                      <span className="text-yellow-500 mr-1">•</span>
+                      {item}
                     </li>
                   ))}
                 </ul>
