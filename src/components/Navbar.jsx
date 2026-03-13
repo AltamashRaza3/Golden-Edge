@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import logo from "../assets/images/logo 1-.png";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -17,10 +18,18 @@ export default function Navbar() {
         {/* Logo */}
         <NavLink
           to="/"
-          className="text-lg font-bold text-yellow-400"
           onClick={closeMobile}
+          className="flex items-center gap-2 group"
         >
-          Golden Edge
+          <img
+            src={logo}
+            alt="Golden Edge Logo"
+            className="h-16 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3"
+          />
+
+          <span className="text-yellow-400 font-semibold hidden sm:block transition-all duration-300 group-hover:text-yellow-300">
+            Golden Edge
+          </span>
         </NavLink>
 
         {/* Desktop Menu */}

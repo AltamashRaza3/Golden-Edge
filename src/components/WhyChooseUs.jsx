@@ -1,7 +1,7 @@
 export default function WhyChooseUs() {
   const features = [
     {
-      title: "50+ Years Industry Experience",
+      title: "50+ Years of Industry Experience",
       description:
         "Over five decades of proven expertise in thermal power plant construction and BTG system execution across India.",
     },

@@ -36,19 +36,15 @@ return ( <section className="py-20 bg-gray-50">
         return (
           <div
             key={index}
-            className="bg-white p-8 rounded-lg shadow hover:shadow-lg transition"
+            className="bg-white p-8 rounded-lg shadow hover:shadow-lg transition text-center"
           >
+            <Icon className="text-yellow-500 mb-4 mx-auto" size={32} />
 
-            <Icon className="text-yellow-500 mb-4" size={32} />
-
-            <h3 className="text-xl font-semibold mb-3">
-              {policy.title}
-            </h3>
+            <h3 className="text-xl font-semibold mb-3">{policy.title}</h3>
 
             <p className="text-gray-600 text-sm leading-relaxed">
               {policy.desc}
             </p>
-
           </div>
         );
       })}

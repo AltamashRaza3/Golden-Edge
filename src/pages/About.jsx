@@ -21,6 +21,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import ClientRequirements from "../components/ClientRequirements";
+import Philosophy from "../components/Philosophy";
 
 export default function About() {
   const [activeTab, setActiveTab] = useState("profile");
@@ -110,7 +111,7 @@ export default function About() {
 
           {/* CONTENT CONTAINER */}
 
-          <div className="bg-white shadow-lg p-10 rounded-lg mb-16">
+          <div className="bg-white shadow-lg p-6 rounded-lg mb-16">
             {/* COMPANY PROFILE */}
 
             {activeTab === "profile" && (
@@ -153,13 +154,18 @@ export default function About() {
                 </div>
 
                 <CompanyTimeline />
-                <ClientRequirements/>
+                <ClientRequirements />
               </>
             )}
 
             {/* MISSION */}
 
-            {activeTab === "mission" && <MissionValues />}
+            {activeTab === "mission" && (
+              <>
+                <MissionValues />
+                <Philosophy />
+              </>
+            )}
 
             {/* LEADERSHIP SECTION */}
 
@@ -194,4 +200,4 @@ export default function About() {
       <Footer />
     </>
   );
-}
+} 
