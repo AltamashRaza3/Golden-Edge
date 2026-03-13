@@ -56,8 +56,8 @@ export default function Hero() {
 
           <div>
             <p className="text-3xl font-bold text-yellow-400">
-              <CountUp start={0} end={18} duration={2} />–
-              <CountUp start={0} end={800} duration={2.5} delay={0.3} />
+              <CountUp start={0} end={18}  duration={2} /> MW –
+              <CountUp start={0} end={800}  duration={2.5} delay={0.3} /> MW
             </p>
             <p className="text-sm text-gray-300">BTG Capacity Range</p>
           </div>
