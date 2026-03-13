@@ -77,6 +77,11 @@ export default function Navbar() {
           </li>
 
           <li>
+            <NavLink to="/careers" className={linkStyle}>
+              Careers
+            </NavLink>
+          </li>
+          <li>
             <NavLink to="/contact" className={linkStyle}>
               Contact
             </NavLink>
@@ -94,7 +99,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-slate-800 px-6 pb-6">
+        <div className="md:hidden bg-slate-800 px-6 pb-6 transition-all duration-300">
           <ul className="flex flex-col gap-4 pt-4">
             <li>
               <NavLink to="/" onClick={closeMobile} className={linkStyle}>
@@ -155,6 +160,16 @@ export default function Navbar() {
                 className={linkStyle}
               >
                 Gallery
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                to="/careers"
+                onClick={closeMobile}
+                className={linkStyle}
+              >
+                Careers
               </NavLink>
             </li>
 

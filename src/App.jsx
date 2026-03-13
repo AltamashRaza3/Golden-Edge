@@ -10,6 +10,8 @@ import ClientsPage from "./pages/ClientsPage";
 import OngoingProjects from "./pages/OngoingProjects";
 import ScrollToTop from "./components/ScrollToTop";
 import AwardsPage from "./pages/AwardsPage";
+import NotFound from "./pages/NotFound";
+import Careers from "./pages/Careers";
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/awards" element={<AwardsPage />} />
+        <Route path="/careers" element={<Careers />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </HashRouter>
   );
