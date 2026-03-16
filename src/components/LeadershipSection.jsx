@@ -1,6 +1,6 @@
-import founder from "../assets/images/founder.jpg";
+import founder from "../assets/images/founder.jpeg";
 import director from "../assets/images/director.jpeg";
-import executive from "../assets/images/founder.jpg";
+import executive from "../assets/images/founder.jpeg";
 
 export default function LeadershipSection({ activeTab }) {
   const leaders = {

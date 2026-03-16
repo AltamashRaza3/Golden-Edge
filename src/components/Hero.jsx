@@ -21,19 +21,22 @@ export default function Hero() {
       {/* Content */}
       <div className="relative w-full px-10 lg:px-20 text-white">
         {/* Heading */}
-        <h1 className="text-4xl md:text-5xl font-bold leading-tight max-w-3xl">
-          50+ Years of Excellence in Thermal Power Plant Engineering
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight max-w-4xl">
+          <span className="text-yellow-400">
+            <CountUp end={50} duration={2.5} />+ Years
+          </span>{" "}
+          of Excellence in Thermal Power Plant Engineering
         </h1>
 
         {/* Description */}
-        <p className="mt-6 text-lg max-w-3xl">
+        <p className="mt-6 text-xl md:text-2xl max-w-3xl">
           At Golden Edge Engineering Pvt. Ltd. (GEEPL), we specialize in
           complete Erection, Testing, and Assistance to Commissioning of
           Boiler–Turbine–Generator (BTG) systems and all their auxiliaries for
           Thermal Power Plants.
         </p>
 
-        <p className="text-lg md:text-xl mt-4 mb-8 max-w-xl">
+        <p className="text-xl md:text-2xl mt-4 mb-12 max-w-2xl">
           Delivering reliable Boiler–Turbine–Generator (BTG) engineering
           solutions for power plants across India.
         </p>
@@ -41,25 +44,27 @@ export default function Hero() {
         {/* Company Highlights */}
         <div className="flex flex-wrap gap-10 mb-10">
           <div>
-            <p className="text-3xl font-bold text-yellow-400">
+            <p className="text-4xl md:text-5xl font-bold text-yellow-400">
               <CountUp end={50} duration={2.5} />+
             </p>
             <p className="text-sm text-gray-300">Years Experience</p>
           </div>
 
           <div>
-            <p className="text-3xl font-bold text-yellow-400">
+            <p className="text-4xl md:text-5xl font-bold text-yellow-400">
               <CountUp end={2500} duration={2.5} separator="," />+
             </p>
             <p className="text-sm text-gray-300">Skilled Workforce</p>
           </div>
 
           <div>
-            <p className="text-3xl font-bold text-yellow-400">
-              <CountUp start={0} end={18}  duration={2} /> MW –
-              <CountUp start={0} end={800}  duration={2.5} delay={0.3} /> MW
+            <p className="text-4xl md:text-5xl font-bold text-yellow-400">
+              <CountUp start={0} end={18} duration={2} /> MW –
+              <CountUp start={0} end={800} duration={2.5} delay={0.3} /> MW
             </p>
-            <p className="text-sm text-gray-300">BTG Capacity Range</p>
+            <p className="text-base md:text-lg text-gray-300">
+              BTG Capacity Range
+            </p>
           </div>
         </div>
 
