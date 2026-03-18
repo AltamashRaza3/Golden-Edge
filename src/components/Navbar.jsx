@@ -75,12 +75,6 @@ export default function Navbar() {
               Gallery
             </NavLink>
           </li>
-
-          <li>
-            <NavLink to="/careers" className={linkStyle}>
-              Careers
-            </NavLink>
-          </li>
           <li>
             <NavLink to="/contact" className={linkStyle}>
               Contact
@@ -160,16 +154,6 @@ export default function Navbar() {
                 className={linkStyle}
               >
                 Gallery
-              </NavLink>
-            </li>
-
-            <li>
-              <NavLink
-                to="/careers"
-                onClick={closeMobile}
-                className={linkStyle}
-              >
-                Careers
               </NavLink>
             </li>
 

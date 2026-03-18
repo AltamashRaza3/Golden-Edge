@@ -10,7 +10,6 @@ import rvunl from "../assets/logos/rvunl.jpg";
 import tata from "../assets/logos/tata-power.png";
 import tneb from "../assets/logos/tneb.png";
 
-
 export default function ClientsSlider() {
   const clients = [
     bihar,
@@ -27,27 +26,33 @@ export default function ClientsSlider() {
   ];
 
   return (
-    <section className="py-20 bg-gray-100 overflow-hidden">
+    <section className="py-24 bg-gray-100 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold mb-4">
+        {/* Heading */}
+        <h2 className="text-4xl md:text-5xl font-bold mb-4">
           Trusted by Leading Power Companies
         </h2>
 
-        <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
+        <p className="text-gray-600 text-lg md:text-xl mb-16 max-w-3xl mx-auto">
           Golden Edge Engineering has successfully executed projects for major
           power utilities and infrastructure companies across India.
         </p>
 
+        {/* Slider */}
         <div className="relative w-full overflow-hidden">
-          <div className="flex gap-16 animate-scroll items-center">
+          <div className="flex gap-10 md:gap-14 animate-scroll items-center">
             {[...clients, ...clients].map((logo, index) => (
-              <img
+              <div
                 key={index}
-                src={logo}
-                alt="client logo"
-                loading="lazy"
-                className="h-14 object-contain hover:scale-105 transition duration-300"
-              />
+                className="flex items-center justify-center px-4"
+              >
+                <img
+                  src={logo}
+                  alt="client logo"
+                  loading="lazy"
+                  className="h-12 md:h-14 object-contain transition duration-300 hover:scale-105"
+                />
+              </div>
             ))}
           </div>
         </div>

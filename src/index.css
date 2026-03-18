@@ -10,9 +10,15 @@
 }
 
 .animate-scroll {
-  animation: scroll 30s linear infinite;
+  display: flex;
+  width: max-content; 
+  animation: scroll 70s linear infinite;
 }
-
+@media (max-width: 768px) {
+  .animate-scroll {
+    animation: scroll 40s linear infinite;
+  }
+}
 .animate-scroll:hover {
   animation-play-state: paused;
 }

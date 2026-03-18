@@ -35,37 +35,52 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+    <section className="py-24 bg-white relative overflow-hidden">
+      {/* subtle background accent */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(234,179,8,0.08),_transparent_70%)]"></div>
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* Heading */}
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
           Why Choose GEEPL
         </h2>
 
-        <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+        <p className="text-center text-gray-600 text-lg md:text-xl mb-16 max-w-3xl mx-auto">
           Golden Edge Engineering Pvt. Ltd. has built a strong reputation in the
           thermal power sector through decades of technical expertise,
           professional project management, and commitment to delivering
           high-quality engineering solutions.
         </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Grid */}
+        <div className="flex flex-wrap justify-center gap-10">
           {features.map((feature, index) => {
             const Icon = feature.icon;
 
             return (
               <div
                 key={index}
-                className="bg-gray-50 p-6 text-center rounded-lg shadow hover:shadow-lg transition"
+                className="group relative w-full md:w-[45%] lg:w-[28%] p-8 rounded-xl bg-white/70 backdrop-blur-md border border-gray-100 transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl"
               >
-                <Icon className="text-orange-500 mb-4 mx-auto" size={32} />
+                {/* Icon */}
+                <div className="mb-5 flex justify-center">
+                  <div className="p-3 rounded-full bg-yellow-100 text-yellow-500 transition-all duration-300 group-hover:bg-yellow-400 group-hover:text-white">
+                    <Icon size={32} />
+                  </div>
+                </div>
 
-                <h3 className="text-xl font-semibold mb-3 ">
+                {/* Title */}
+                <h3 className="text-xl md:text-2xl font-semibold mb-3 text-center">
                   {feature.title}
                 </h3>
 
-                <p className="text-gray-600 text-sm leading-relaxed">
+                {/* Description */}
+                <p className="text-gray-600 text-sm md:text-base leading-relaxed text-center">
                   {feature.description}
                 </p>
+
+                {/* subtle hover line */}
+                <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-yellow-400 transition-all duration-300 group-hover:w-full"></div>
               </div>
             );
           })}
