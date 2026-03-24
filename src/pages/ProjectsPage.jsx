@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -7,8 +7,28 @@ import { ongoingProjects, completedProjects } from "../data/projectsdata";
 export default function ProjectsPage() {
   const [activeTab, setActiveTab] = useState("completed");
 
-  const projects =
-    activeTab === "completed" ? completedProjects : ongoingProjects;
+  // Extract completion year from "2016–2019"
+  const extractCompletionYear = (yearStr) => {
+    if (!yearStr) return 0;
+    const parts = yearStr.split(/–|-/);
+    return parseInt(parts[parts.length - 1], 10) || 0;
+  };
+
+  // Memoized project list
+  const projects = useMemo(() => {
+    const data =
+      activeTab === "completed" ? completedProjects : ongoingProjects;
+
+    if (!Array.isArray(data)) return [];
+
+    if (activeTab === "completed") {
+      return [...data].sort(
+        (a, b) => extractCompletionYear(b.year) - extractCompletionYear(a.year),
+      );
+    }
+
+    return data;
+  }, [activeTab, completedProjects, ongoingProjects]);
 
   return (
     <>
@@ -19,7 +39,6 @@ export default function ProjectsPage() {
           <h1 className="text-4xl font-bold text-center mb-12">Our Projects</h1>
 
           {/* Tabs */}
-
           <div className="flex justify-center gap-4 mb-12 flex-wrap">
             <button
               onClick={() => setActiveTab("completed")}
@@ -44,8 +63,7 @@ export default function ProjectsPage() {
             </button>
           </div>
 
-          {/* Projects Table */}
-
+          {/* Table */}
           <div className="overflow-x-auto bg-white shadow rounded-lg">
             <table className="min-w-full text-left">
               <thead className="bg-gray-100 text-gray-800 uppercase text-sm tracking-wide">
@@ -55,45 +73,63 @@ export default function ProjectsPage() {
                   <th className="px-6 py-4">Location</th>
                   <th className="px-6 py-4">Capacity</th>
                   <th className="px-6 py-4">Scope of Work</th>
-
                   <th className="px-6 py-5">
-                    {activeTab === "completed" ? "Year" : "Status"}
+                    {activeTab === "completed" ? "Year " : "Status"}
                   </th>
                 </tr>
               </thead>
 
               <tbody>
-                {projects.map((project, index) => (
-                  <tr
-                    key={index}
-                    className="border-t even:bg-gray-50 hover:bg-yellow-50 transition"
-                  >
-                    <td className="px-6 py-4 font-medium">
-                      {project.project}
+                {projects.length > 0 ? (
+                  projects.map((project, index) => {
+                    const key =
+                      project?.id ||
+                      `${project?.project}-${project?.client}-${index}`;
 
-                      {project.highlight && (
-                        <p className="text-sm text-yellow-600">
-                          {project.highlight}
-                        </p>
-                      )}
-                    </td>
+                    return (
+                      <tr
+                        key={key}
+                        className="border-t even:bg-gray-50 hover:bg-yellow-50 transition"
+                      >
+                        <td className="px-6 py-4 font-medium">
+                          {project?.project || "—"}
 
-                    <td className="px-6 py-5">{project.client}</td>
-                    <td className="px-6 py-5">{project.location}</td>
+                          {project?.highlight && (
+                            <p className="text-sm text-yellow-600">
+                              {project.highlight}
+                            </p>
+                          )}
+                        </td>
 
-                    <td className="px-6 py-5">{project.capacity}</td>
+                        <td className="px-6 py-5">{project?.client || "—"}</td>
 
-                    <td className="px-6 py-4 text-sm text-gray-600 max-w-sm">
-                      {project.scope}
-                    </td>
+                        <td className="px-6 py-5">
+                          {project?.location || "—"}
+                        </td>
 
-                    <td className="px-6 py-4">
-                      {activeTab === "completed"
-                        ? project.year
-                        : project.status}
+                        <td className="px-6 py-5">
+                          {project?.capacity || "—"}
+                        </td>
+
+                        <td className="px-6 py-4 text-sm text-gray-600 max-w-sm">
+                          {project?.scope || "—"}
+                        </td>
+
+                        <td className="px-6 py-4">
+                          {activeTab === "completed"
+                            ? project?.year || "—"
+                            : project?.displayStatus || project?.status || "—"}
+                        </td>
+                      </tr>
+                    );
+                  })
+                ) : (
+                  <tr>
+                    <td colSpan="6" className="text-center py-10 text-gray-500">
+                      No projects available
                     </td>
                   </tr>
-                ))}
+                )}
               </tbody>
             </table>
           </div>

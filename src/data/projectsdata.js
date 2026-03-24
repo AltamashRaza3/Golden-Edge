@@ -6,34 +6,8 @@ project: "Buxar Thermal Power Project",
 location: "Chausa, Buxar, Bihar",
 capacity: "2x660 MW",
 scope: "Mechanical erection of ESP & allied works",
-status: "Under Progress",
-},
-
-{
-client: "BHEL",
-project: "North Karanpura STPP – Unit #3",
-location: "Chatra, Jharkhand",
-capacity: "3x660 MW",
-scope: "ETC of Steam Turbine, TG, Hot Box, Heat Exchanger, BFP Drive Turbines, TG Piping & Misc. Pumps",
-status: "Under Progress",
-},
-
-{
-client: "BHEL",
-project: "NSPCL Project",
-location: "Rourkela, Odisha",
-capacity: "1x250 MW",
-scope: "ETC of Steam Turbine Generator & Auxiliaries",
-status: "Under Progress",
-},
-
-{
-client: "BHEL",
-project: "North Karanpura STPP – Fire Detection & Protection System",
-location: "Chatra, Jharkhand",
-capacity: "3x660 MW",
-scope: "Handling, erection, welding, painting, testing & commissioning of Plant Fire Detection & Protection System",
-status: "Under Progress",
+status: "ongoing",
+displayStatus: "Under Progress"
 },
 
 {
@@ -42,79 +16,8 @@ project: "North Karanpura STPP – TG Set & Associated Works",
 location: "Chatra, Jharkhand",
 capacity: "3x660 MW",
 scope: "Shifting & erection of TG Set, Condenser, Pumps, BFP Drive Turbines, Piping & Auxiliaries",
-status: "Under Progress",
-},
-
-{
-client: "BHEL",
-project: "Barh Super Thermal Power Project – Stage 1",
-location: "Barh, Bihar",
-capacity: "3x660 MW",
-scope: "Erection, Testing & Commissioning of Power Cycle Piping & Auxiliaries",
-status: "Under Progress",
-},
-
-{
-client: "BHEL",
-project: "Gadarwara STPS – Unit #2 (Power Cycle Piping)",
-location: "Gadarwara, Madhya Pradesh",
-capacity: "2x800 MW",
-scope: "ETC, Trial Operation, Insulation & Painting of Power Cycle Piping",
-status: "Under Progress",
-},
-
-{
-client: "BHEL",
-project: "Gadarwara STPS – Unit #1 & #2 (ESP Works)",
-location: "Gadarwara, Madhya Pradesh",
-capacity: "2x800 MW",
-scope: "ETC, Insulation & Painting of ESP",
-status: "Under Progress",
-},
-
-{
-client: "BHEL",
-project: "Gadarwara STPS – Unit #2 (Boiler Auxiliaries)",
-location: "Gadarwara, Madhya Pradesh",
-capacity: "2x800 MW",
-scope: "ETC of Boiler Auxiliaries, Aux Boiler, Rotating Machines, Insulation & Painting",
-status: "Under Progress",
-},
-
-{
-client: "BHEL",
-project: "Vindhyachal STPS – Package I",
-location: "Vindhyanagar, Singrauli, Madhya Pradesh",
-capacity: "3x210 MW",
-scope: "Renovation & Retrofitting of ESP & Ducts",
-status: "Under Progress",
-},
-
-{
-client: "BHEL",
-project: "Darlipali STPP – Stage I",
-location: "Sundargarh, Odisha",
-capacity: "2x800 MW",
-scope: "Material Management & Handling",
-status: "Under Progress",
-},
-
-{
-client: "BHEL-PSER",
-project: "Barauni Thermal Power Station – Unit #9",
-location: "Begusarai, Bihar",
-capacity: "2x250 MW",
-scope: "Material handling, ETC of Boiler, Auxiliaries, ESP, Piping, Insulation & Painting",
-status: "Under Progress",
-},
-
-{
-client: "BHEL",
-project: "Barauni Thermal Power Station – Package 2",
-location: "Begusarai, Bihar",
-capacity: "1x250 MW",
-scope: "ETC of Steam Turbine, TG, Pumps, Piping & Fire Protection System",
-status: "Under Progress",
+status: "ongoing",
+displayStatus: "Under Progress"
 },
 
 {
@@ -123,7 +26,8 @@ project: "KBUNL – Unit #2",
 location: "Kanti, Muzaffarpur, Bihar",
 capacity: "2x195 MW",
 scope: "ETC, Trial Run & Handover of Boiler, TG, Duct, ESP, Piping, Insulation & Painting",
-status: "Under Progress",
+status: "ongoing",
+displayStatus: "Under Progress"
 }
 
 ];
@@ -131,6 +35,115 @@ status: "Under Progress",
 
 export const completedProjects = [
 
+{
+project: "North Karanpura STPP – Unit #3",
+client: "BHEL",
+location: "Chatra, Jharkhand",
+capacity: "3x660 MW",
+scope: "ETC of Steam Turbine, TG, Hot Box, Heat Exchanger, BFP Drive Turbines, TG Piping & Misc. Pumps",
+highlight: "Recently completed major thermal project",
+year: "2022–2025",
+},
+
+{
+project: "NSPCL Project",
+client: "BHEL",
+location: "Rourkela, Odisha",
+capacity: "1x250 MW",
+scope: "ETC of Steam Turbine Generator & Auxiliaries",
+highlight: "Completed turbine generator project",
+year: "2018–2022",
+},
+
+{
+project: "North Karanpura STPP – Fire Detection & Protection System",
+client: "BHEL",
+location: "Chatra, Jharkhand",
+capacity: "3x660 MW",
+scope: "Handling, erection, welding, painting, testing & commissioning of Plant Fire Detection & Protection System",
+highlight: "Safety system execution",
+year: "2018–2023",
+},
+
+{
+project: "Barh Super Thermal Power Project – Stage 1",
+client: "BHEL",
+location: "Barh, Bihar",
+capacity: "3x660 MW",
+scope: "Erection, Testing & Commissioning of Power Cycle Piping & Auxiliaries",
+highlight: "Large-scale thermal project",
+year: "2016–2021",
+},
+
+{
+project: "Gadarwara STPS – Unit #2 (Power Cycle Piping)",
+client: "BHEL",
+location: "Gadarwara, Madhya Pradesh",
+capacity: "2x800 MW",
+scope: "ETC, Trial Operation, Insulation & Painting of Power Cycle Piping",
+highlight: "Major piping execution",
+year: "2017–2021",
+},
+
+{
+project: "Gadarwara STPS – Unit #1 & #2 (ESP Works)",
+client: "BHEL",
+location: "Gadarwara, Madhya Pradesh",
+capacity: "2x800 MW",
+scope: "ETC, Insulation & Painting of ESP",
+highlight: "Emission control system",
+year: "2015–2021",
+},
+
+{
+project: "Gadarwara STPS – Unit #2 (Boiler Auxiliaries)",
+client: "BHEL",
+location: "Gadarwara, Madhya Pradesh",
+capacity: "2x800 MW",
+scope: "ETC of Boiler Auxiliaries, Aux Boiler, Rotating Machines, Insulation & Painting",
+highlight: "Boiler execution package",
+year: "2015–2021",
+},
+
+{
+project: "Barauni Thermal Power Station – Package 2",
+client: "BHEL",
+location: "Begusarai, Bihar",
+capacity: "1x250 MW",
+scope: "ETC of Steam Turbine, TG, Pumps, Piping & Fire Protection System",
+highlight: "Recently completed turbine and piping package",
+year: "2021–2024",
+},
+
+{
+project: "Barauni Thermal Power Station – Unit #9",
+client: "BHEL-PSER",
+location: "Begusarai, Bihar",
+capacity: "2x250 MW",
+scope: "Material handling, ETC of Boiler, Auxiliaries, ESP, Piping, Insulation & Painting",
+highlight: "Major EPC execution completed",
+year: "2020–2024",
+},
+
+{
+project: "Darlipali STPP – Stage I",
+client: "BHEL",
+location: "Sundargarh, Odisha",
+capacity: "2x800 MW",
+scope: "Material Management & Handling",
+highlight: "Large-scale material handling project",
+year: "2019–2023",
+},
+
+{
+project: "Vindhyachal STPS – Package I",
+client: "BHEL",
+location: "Vindhyanagar, Madhya Pradesh",
+capacity: "3x210 MW",
+scope: "Renovation & Retrofitting of ESP & Ducts",
+highlight: "Long-term retrofit project completed",
+year: "2018–2022",
+},
 {
 project: "NTPC Sipat",
 client: "BHEL",
@@ -261,4 +274,12 @@ highlight: "Early benchmark sub-critical thermal project",
 year: "2001–2003",
 }
 
+];
+
+export const projects = [
+  ...ongoingProjects,
+  ...completedProjects.map((p) => ({
+    ...p,
+    status: "completed",
+  })),
 ];
