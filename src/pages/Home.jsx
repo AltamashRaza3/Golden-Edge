@@ -1,18 +1,24 @@
 import { Helmet } from "react-helmet-async";
+import { lazy, Suspense } from "react";
 
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import Stats from "../components/Stats";
-import WhyChooseUs from "../components/WhyChooseUs";
-import Services from "../components/Services";
-import BTGExpertise from "../components/BTGExpertise";
-import SupportingExpertise from "../components/SupportingExpertise";
-import ClientRequirements from "../components/ClientRequirements";
-import SafetyQuality from "../components/SafetyQuality";
-import Projects from "../components/Projects";
-import ClientsSlider from "../components/ClientsSlider";
-import ContactCTA from "../components/ContactCTA";
 import Footer from "../components/Footer";
+
+const Stats = lazy(() => import("../components/Stats"));
+const WhyChooseUs = lazy(() => import("../components/WhyChooseUs"));
+const Services = lazy(() => import("../components/Services"));
+const BTGExpertise = lazy(() => import("../components/BTGExpertise"));
+const SupportingExpertise = lazy(
+ () => import("../components/SupportingExpertise"),
+);
+const ClientRequirements = lazy(
+  () => import("../components/ClientRequirements"),
+);
+const SafetyQuality = lazy(() => import("../components/SafetyQuality"));
+const Projects = lazy(() => import("../components/Projects"));
+const ClientsSlider = lazy(() => import("../components/ClientsSlider"));
+const ContactCTA = lazy(() => import("../components/ContactCTA"));
 
 export default function Home() {
   return (
@@ -66,22 +72,21 @@ export default function Home() {
       </Helmet>
 
       <Navbar />
-
       <Hero />
-      <Stats />
-      <WhyChooseUs />
-      <Services />
 
-      <BTGExpertise />
-      <SupportingExpertise />
-      <ClientRequirements />
-
-      <SafetyQuality />
-
-      <Projects />
-      <ClientsSlider />
-
-      <ContactCTA />
+      <Suspense fallback={null}>
+        <Stats />
+        <WhyChooseUs />
+        <Services />
+        <BTGExpertise />
+        <SupportingExpertise />
+        <ClientRequirements />
+        <SafetyQuality />
+        <Projects />
+        <ClientsSlider />
+        <ContactCTA />
+      </Suspense>
+      
       <Footer />
     </>
   );
