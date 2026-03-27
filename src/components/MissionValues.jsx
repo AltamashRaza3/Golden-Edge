@@ -50,6 +50,7 @@ export default function MissionValues() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
+        {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
 
@@ -64,6 +65,7 @@ export default function MissionValues() {
 
         <h3 className="text-2xl font-semibold text-center mb-10">Our Values</h3>
 
+        {/* Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {values.map((value, index) => {
             const Icon = value.icon;
@@ -71,12 +73,20 @@ export default function MissionValues() {
             return (
               <div
                 key={index}
-                className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition"
+                className="group bg-gray-50 p-6 rounded-lg shadow transition duration-300 hover:shadow-xl hover:-translate-y-1 hover:scale-105"
               >
-                <Icon className="text-yellow-500 mb-4" size={32} />
+                {/* Icon */}
+                <Icon
+                  className="text-yellow-500 mb-4 transition duration-300 group-hover:text-yellow-400"
+                  size={32}
+                />
 
-                <h4 className="text-lg font-semibold mb-2">{value.title}</h4>
+                {/* Title */}
+                <h4 className="text-lg font-semibold mb-2 transition duration-300 group-hover:text-yellow-500">
+                  {value.title}
+                </h4>
 
+                {/* Description */}
                 <p className="text-gray-600 text-sm leading-relaxed">
                   {value.desc}
                 </p>

@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import { Helmet } from "react-helmet-async";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -7,14 +8,12 @@ import { ongoingProjects, completedProjects } from "../data/projectsdata";
 export default function ProjectsPage() {
   const [activeTab, setActiveTab] = useState("completed");
 
-  // Extract completion year from "2016–2019"
   const extractCompletionYear = (yearStr) => {
     if (!yearStr) return 0;
     const parts = yearStr.split(/–|-/);
     return parseInt(parts[parts.length - 1], 10) || 0;
   };
 
-  // Memoized project list
   const projects = useMemo(() => {
     const data =
       activeTab === "completed" ? completedProjects : ongoingProjects;
@@ -32,11 +31,63 @@ export default function ProjectsPage() {
 
   return (
     <>
+      {/* 🔥 SEO META */}
+      <Helmet>
+        <title>
+          Power Plant Projects in India | Golden Edge Engineering Portfolio
+        </title>
+
+        <meta
+          name="description"
+          content="Explore Golden Edge Engineering’s portfolio of completed and ongoing thermal power plant projects, including boiler, turbine, and BTG installations across India."
+        />
+
+        <meta
+          name="keywords"
+          content="power plant projects India, BTG projects, boiler erection projects, turbine installation projects, Golden Edge Engineering projects"
+        />
+
+        <meta name="author" content="Golden Edge Engineering Pvt Ltd" />
+
+        <link rel="canonical" href="https://www.goldenedge.in/projects" />
+
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="Power Plant Projects | Golden Edge Engineering"
+        />
+        <meta
+          property="og:description"
+          content="View our completed and ongoing power plant projects across India."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.goldenedge.in/projects" />
+        <meta
+          property="og:image"
+          content="https://www.goldenedge.in/preview.jpg"
+        />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Power Plant Projects India" />
+        <meta
+          name="twitter:description"
+          content="Explore Golden Edge Engineering’s project portfolio."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.goldenedge.in/preview.jpg"
+        />
+      </Helmet>
+
       <Navbar />
 
       <section className="pt-24 pb-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
-          <h1 className="text-4xl font-bold text-center mb-12">Our Projects</h1>
+          {/* ✅ H1 (SEO important) */}
+          <h1 className="text-4xl font-bold text-center mb-12">
+            Power Plant Projects
+          </h1>
 
           {/* Tabs */}
           <div className="flex justify-center gap-4 mb-12 flex-wrap">
@@ -74,7 +125,7 @@ export default function ProjectsPage() {
                   <th className="px-6 py-4">Capacity</th>
                   <th className="px-6 py-4">Scope of Work</th>
                   <th className="px-6 py-5">
-                    {activeTab === "completed" ? "Year " : "Status"}
+                    {activeTab === "completed" ? "Year" : "Status"}
                   </th>
                 </tr>
               </thead>

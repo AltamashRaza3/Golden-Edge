@@ -9,7 +9,7 @@ export default function WhyChooseUs() {
         "More than five decades of experience in thermal power plant engineering and execution of Boiler–Turbine–Generator (BTG) systems across India.",
     },
     {
-      title: "Client-Centred Delivery",
+      title: "Client-Centered Delivery",
       icon: Handshake,
       description:
         "Our approach focuses on strong client relationships, transparent communication and consistent project performance.",

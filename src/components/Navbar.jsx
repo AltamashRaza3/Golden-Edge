@@ -5,7 +5,15 @@ import logo from "../assets/images/logo 1-.png";
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const closeMobile = () => setMobileOpen(false);
+  // 🔥 Handles both close + scroll
+  const handleNavigation = () => {
+    setMobileOpen(false);
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   const linkStyle = ({ isActive }) =>
     isActive
@@ -18,12 +26,12 @@ export default function Navbar() {
         {/* Logo */}
         <NavLink
           to="/"
-          onClick={closeMobile}
+          onClick={handleNavigation}
           className="flex items-center gap-2 group"
         >
           <img
             src={logo}
-            alt="Golden Edge Logo"
+            alt="Golden Edge Engineering logo"
             className="h-16 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3"
           />
 
@@ -35,48 +43,77 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <ul className="hidden md:flex items-center gap-8 font-medium">
           <li>
-            <NavLink to="/" className={linkStyle}>
+            <NavLink to="/" onClick={handleNavigation} className={linkStyle}>
               Home
             </NavLink>
           </li>
 
           <li>
-            <NavLink to="/about" className={linkStyle}>
+            <NavLink
+              to="/about"
+              onClick={handleNavigation}
+              className={linkStyle}
+            >
               About
             </NavLink>
           </li>
 
           <li>
-            <NavLink to="/services" className={linkStyle}>
+            <NavLink
+              to="/services"
+              onClick={handleNavigation}
+              className={linkStyle}
+            >
               Services
             </NavLink>
           </li>
 
           <li>
-            <NavLink to="/projects" className={linkStyle}>
+            <NavLink
+              to="/projects"
+              onClick={handleNavigation}
+              className={linkStyle}
+            >
               Projects
             </NavLink>
           </li>
 
           <li>
-            <NavLink to="/clients" className={linkStyle}>
+            <NavLink
+              to="/clients"
+              onClick={handleNavigation}
+              className={linkStyle}
+            >
               Clients
             </NavLink>
           </li>
 
           <li>
-            <NavLink to="/infrastructure" className={linkStyle}>
+            <NavLink
+              to="/infrastructure"
+              onClick={handleNavigation}
+              className={linkStyle}
+            >
               Infrastructure
             </NavLink>
           </li>
 
           <li>
-            <NavLink to="/gallery" className={linkStyle}>
+            <NavLink
+              to="/gallery"
+              onClick={handleNavigation}
+              className={linkStyle}
+            >
               Gallery
             </NavLink>
           </li>
+
           <li>
-            <NavLink to="/contact" className={linkStyle}>
+            <NavLink
+              to="/contact"
+              onClick={handleNavigation}
+              className={linkStyle}
+            >
               Contact
             </NavLink>
           </li>
@@ -96,13 +133,17 @@ export default function Navbar() {
         <div className="md:hidden bg-slate-800 px-6 pb-6 transition-all duration-300">
           <ul className="flex flex-col gap-4 pt-4">
             <li>
-              <NavLink to="/" onClick={closeMobile} className={linkStyle}>
+              <NavLink to="/" onClick={handleNavigation} className={linkStyle}>
                 Home
               </NavLink>
             </li>
 
             <li>
-              <NavLink to="/about" onClick={closeMobile} className={linkStyle}>
+              <NavLink
+                to="/about"
+                onClick={handleNavigation}
+                className={linkStyle}
+              >
                 About
               </NavLink>
             </li>
@@ -110,7 +151,7 @@ export default function Navbar() {
             <li>
               <NavLink
                 to="/services"
-                onClick={closeMobile}
+                onClick={handleNavigation}
                 className={linkStyle}
               >
                 Services
@@ -120,7 +161,7 @@ export default function Navbar() {
             <li>
               <NavLink
                 to="/projects"
-                onClick={closeMobile}
+                onClick={handleNavigation}
                 className={linkStyle}
               >
                 Projects
@@ -130,7 +171,7 @@ export default function Navbar() {
             <li>
               <NavLink
                 to="/clients"
-                onClick={closeMobile}
+                onClick={handleNavigation}
                 className={linkStyle}
               >
                 Clients
@@ -140,7 +181,7 @@ export default function Navbar() {
             <li>
               <NavLink
                 to="/infrastructure"
-                onClick={closeMobile}
+                onClick={handleNavigation}
                 className={linkStyle}
               >
                 Infrastructure
@@ -150,7 +191,7 @@ export default function Navbar() {
             <li>
               <NavLink
                 to="/gallery"
-                onClick={closeMobile}
+                onClick={handleNavigation}
                 className={linkStyle}
               >
                 Gallery
@@ -160,7 +201,7 @@ export default function Navbar() {
             <li>
               <NavLink
                 to="/contact"
-                onClick={closeMobile}
+                onClick={handleNavigation}
                 className={linkStyle}
               >
                 Contact

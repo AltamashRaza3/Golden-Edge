@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CompanyTimeline from "../components/CompanyTimeline";
@@ -68,6 +69,55 @@ export default function About() {
   return (
     <>
       <Navbar />
+      <Helmet>
+        {/* Primary SEO */}
+        <title>
+          About Golden Edge Engineering | Power Plant & BTG Experts in India
+        </title>
+
+        <meta
+          name="description"
+          content="Learn about Golden Edge Engineering Pvt. Ltd., a leading contractor in thermal power plant construction, BTG systems, and industrial infrastructure projects across India with over 50 years of experience."
+        />
+
+        <meta
+          name="keywords"
+          content="about Golden Edge Engineering, thermal power company India, BTG experts India, power plant contractors, engineering company India"
+        />
+
+        <meta name="author" content="Golden Edge Engineering Pvt Ltd" />
+
+        {/* Canonical */}
+        <link rel="canonical" href="https://www.goldenedge.in/about" />
+
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="About Golden Edge Engineering Pvt Ltd"
+        />
+        <meta
+          property="og:description"
+          content="Discover Golden Edge Engineering’s journey, expertise, and leadership in thermal power plant and industrial engineering projects."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.goldenedge.in/about" />
+        <meta
+          property="og:image"
+          content="https://www.goldenedge.in/preview.jpg"
+        />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Golden Edge Engineering" />
+        <meta
+          name="twitter:description"
+          content="Explore Golden Edge Engineering’s expertise in power plant construction and engineering solutions."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.goldenedge.in/preview.jpg"
+        />
+      </Helmet>
 
       <section className="pt-24 pb-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
@@ -148,7 +198,7 @@ export default function About() {
                 <div className="mb-12">
                   <img
                     src={journeyImage}
-                    alt="Golden Edge Engineering Journey"
+                    alt="Golden Edge Engineering thermal power plant project journey timeline"
                     className="w-full max-w-5xl mx-auto rounded-lg shadow-lg"
                   />
                 </div>
