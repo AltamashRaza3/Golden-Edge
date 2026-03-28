@@ -1,0 +1,1 @@
+const e="/Golden-Edge/assets/pic%201-CUxM1yOs.webp",o=Object.freeze(Object.defineProperty({__proto__:null,default:e},Symbol.toStringTag,{value:"Module"})),t="/Golden-Edge/assets/pic%202-DUx1FnXW.webp",l=Object.freeze(Object.defineProperty({__proto__:null,default:t},Symbol.toStringTag,{value:"Module"}));export{l as _,o as a,e as c,t as e};
